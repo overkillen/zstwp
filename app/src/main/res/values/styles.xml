@@ -1,0 +1,35 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/PrimaryColor</item>
+        <item name="colorPrimaryDark">@color/PrimaryDarkColor</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Card" parent="CardView">
+        <item name="android:background">@color/card_white</item>
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="CardInside">
+        <item name="android:paddingLeft">@dimen/card_padding_vertical</item>
+        <item name="android:paddingRight">@dimen/card_padding_vertical</item>
+        <item name="android:paddingTop">@dimen/card_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/card_padding_horizontal</item>
+        <item name="android:background">@color/card_white</item>
+    </style>
+
+    <style name="TextInsideCard">
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textColor">@color/PrimaryColor</item>
+
+        <item name="android:layout_marginLeft">@dimen/text_margin</item>
+        <item name="android:layout_marginRight">@dimen/text_margin</item>
+        <item name="android:layout_marginTop">@dimen/text_margin</item>
+    </style>
+
+
+
+</resources>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ZSTWP</string>
+
+    <string name="last_alert_time_string">Last Alert Time</string>
+    <string name="date_string">21.10.2016 13:34</string>
+    <string name="damaged_devices_string">Damaged Devices</string>
+    <string name="number_of_devices_string">3!</string>
+
+    <string name="device_string">Device 1</string>
+    <string name="info_string">Jakieś inne info</string>
+    <string name="error_string">Tu będzie spinner</string>
+
+    <string name="scrollViewTest">
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+        ScrollViewTest\n
+    </string>
+
+
+</resources>
