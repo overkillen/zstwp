@@ -60,16 +60,16 @@ public class MainActivity extends AppCompatActivity {
         /*
         Adding the tab view to our tablayout at appropriate positions
         As I want home at first position I am passing home and 0 as argument to
-        the tablayout and like wise for other fragment_wfm as well
+        the tablayout and like wise for other fragment_wfm_start as well
          */
         tabLayout.addTab(wfm, 0);
         tabLayout.addTab(fm, 1);
 
         /*
-        TabTextColor sets the color for the title of the fragment_wfm, passing a ColorStateList here makes
+        TabTextColor sets the color for the title of the fragment_wfm_start, passing a ColorStateList here makes
         tab change colors in different situations such as selected, active, inactive etc
 
-        TabIndicatorColor sets the color for the indiactor below the fragment_wfm
+        TabIndicatorColor sets the color for the indiactor below the fragment_wfm_start
          */
 
         tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.drawable.tab_selector));
