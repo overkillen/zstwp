@@ -30,6 +30,9 @@
         <item name="android:layout_marginTop">@dimen/text_margin</item>
     </style>
 
+    <style name="TextInsideCardBig" parent="TextInsideCard">
+        <item name="android:textSize">@dimen/font_big</item>
+    </style>
 
 
 </resources>

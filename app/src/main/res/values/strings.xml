@@ -10,6 +10,12 @@
     <string name="info_string">Jakieś inne info</string>
     <string name="error_string">Tu będzie spinner</string>
 
+    <string name="serviceman_id_string">ID Serwisanta</string>
+    <string name="start_work_string">Rozpocznij pracę</string>
+    <string name="end_work_string">Zakończ pracę</string>
+    <string name="navigate_string">Nawiguj</string>
+
+
     <string name="scrollViewTest">
         ScrollViewTest\n
         ScrollViewTest\n
@@ -24,6 +30,8 @@
         ScrollViewTest\n
         ScrollViewTest\n
     </string>
+
+
 
 
 </resources>
