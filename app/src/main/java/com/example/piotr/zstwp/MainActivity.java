@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     private int backButtonCount = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+
 
         /*
         Creating Adapter and setting that adapter to the viewPager

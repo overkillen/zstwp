@@ -62,10 +62,9 @@
                     android:id="@+id/number_of_devices_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/font_big"
                     android:text="@string/number_of_devices_string"
                     android:gravity="right"
-                    style="@style/TextInsideCard"/>
+                    style="@style/TextInsideCardBig"/>
 
 
             </LinearLayout>
