@@ -22,7 +22,7 @@
     </style>
 
     <style name="TextInsideCard">
-        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textSize">@dimen/font_small</item>
         <item name="android:textColor">@color/PrimaryColor</item>
 
         <item name="android:layout_marginLeft">@dimen/text_margin</item>

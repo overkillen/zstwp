@@ -4,11 +4,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -24,6 +27,12 @@ import java.net.URL;
 public class FmFragment extends Fragment {
     View view;
     private TextView instructionsView;
+    private TextView deviceName;
+    private TextView deviceType;
+    private TextView deviceIp;
+    private TextView ticketNumber;
+    private TextView rackslot;
+    private TextView shelf;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,11 +42,49 @@ public class FmFragment extends Fragment {
         getAlert();
 
         instructionsView = (TextView) view.findViewById(R.id.instructions_field);
-        Button confirmButton = (Button) view.findViewById(R.id.confirmButton);
+        deviceName = (TextView) view.findViewById(R.id.device_name);
+        deviceType = (TextView) view.findViewById(R.id.device_type);
+        deviceIp = (TextView) view.findViewById(R.id.device_ip);
+        ticketNumber = (TextView) view.findViewById(R.id.ticket_number);
+        rackslot = (TextView) view.findViewById(R.id.rackslot);
+        shelf = (TextView) view.findViewById(R.id.shelf);
+
+        final Button confirmButton = (Button) view.findViewById(R.id.confirmButton);
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 confirmAlert(v);
+            }
+        });
+        confirmButton.setEnabled(false);
+
+        final Button cancelButton = (Button) view.findViewById(R.id.cancelButton);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmAlert(v);
+            }
+        });
+        cancelButton.setEnabled(false);
+
+        final EditText commentField = (EditText) view.findViewById(R.id.confirmField);
+
+        commentField.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+
+                confirmButton.setEnabled(s.length() != 0);
+                cancelButton.setEnabled(s.length() != 0);
             }
         });
 
