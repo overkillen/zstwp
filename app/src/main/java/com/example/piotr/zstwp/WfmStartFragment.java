@@ -45,8 +45,10 @@ public class WfmStartFragment extends Fragment {
 
         etDriverId = (EditText) view.findViewById(R.id.driverId_et);
         etDriverId.setText("" + driverId);
-        
 
+
+        loginButton = (Button) view.findViewById(R.id.loginButton);
+        
         thiscontext = container.getContext();
 
         // Set a click listener for Fragment button
