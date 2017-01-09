@@ -45,9 +45,7 @@ public class WfmStartFragment extends Fragment {
 
         etDriverId = (EditText) view.findViewById(R.id.driverId_et);
         etDriverId.setText("" + driverId);
-
-
-        loginButton = (Button) view.findViewById(R.id.loginButton);
+        
 
         thiscontext = container.getContext();
 
@@ -57,6 +55,7 @@ public class WfmStartFragment extends Fragment {
             public void onClick(View v) {
                 // Create a Toast notification/message
                 //Toast.makeText(thiscontext, "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
+
 
                 DriverIdString = etDriverId.getText().toString();
 

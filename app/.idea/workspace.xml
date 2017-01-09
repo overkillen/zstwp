@@ -12,7 +12,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc840452-04eb-4245-9920-9821d00bb602" name="Default" comment="" />
+    <list default="true" id="bc840452-04eb-4245-9920-9821d00bb602" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmStartFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmStartFragment.java" />
+    </list>
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/build/outputs/" />
@@ -58,21 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WfmStartFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WfmStartFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmStartFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="38" />
+            <state relative-caret-position="38">
+              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1547#4080#0" expanded="true" />
-                <element signature="e#4079#4080#0" expanded="true" />
+                <element signature="e#1486#4020#0" expanded="true" />
+                <element signature="e#4019#4020#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WfmNotificationFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WfmNotificationFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmNotificationFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -2215,8 +2217,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1547#4080#0" expanded="true" />
-            <element signature="e#4079#4080#0" expanded="true" />
+            <element signature="e#1486#4020#0" expanded="true" />
+            <element signature="e#4019#4020#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2421,24 +2423,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmStartFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1547#4080#0" expanded="true" />
-            <element signature="e#4079#4080#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmNotificationFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmStartFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1486#4020#0" expanded="true" />
+            <element signature="e#4019#4020#0" expanded="true" />
           </folding>
         </state>
       </provider>
