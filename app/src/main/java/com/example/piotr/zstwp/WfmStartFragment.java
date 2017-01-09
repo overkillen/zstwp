@@ -30,9 +30,11 @@ public class WfmStartFragment extends Fragment {
 
     private String DriverIdString;
     private boolean driverIdCorrect;
+    private static boolean openAnotherFragment = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
 
         view = inflater.inflate(R.layout.fragment_wfm_start, container, false);
 
@@ -83,6 +85,7 @@ public class WfmStartFragment extends Fragment {
 
                         //TODO
                         //tu bedzie kod odpowiedzialny za przejscie do kolejnego fragmentu
+                        openAnotherFragment = true;
                         Fragment fragmentNotification = new WfmNotificationFragment();
                         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -108,6 +111,16 @@ public class WfmStartFragment extends Fragment {
 
         return view;
         //return inflater.inflate(R.layout.fragment_wfm_start, container, false);
+    }
+
+    public void onResume(){
+        if(openAnotherFragment) {
+            ViewGroup mContainer = (ViewGroup) getActivity().findViewById(R.id.start);
+            if (mContainer != null) {
+                mContainer.removeAllViews();
+            }
+        }
+        super.onResume();
     }
 
 
