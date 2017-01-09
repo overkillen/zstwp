@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -12,7 +15,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 public class WfmStartFragment extends Fragment {
+
+
+
+
+
 
     Context thiscontext;
     View view;
@@ -39,6 +48,7 @@ public class WfmStartFragment extends Fragment {
 
 
         loginButton = (Button) view.findViewById(R.id.loginButton);
+
         thiscontext = container.getContext();
 
         // Set a click listener for Fragment button
@@ -72,6 +82,17 @@ public class WfmStartFragment extends Fragment {
 
                         //TODO
                         //tu bedzie kod odpowiedzialny za przejscie do kolejnego fragmentu
+                        Fragment fragmentNotification = new WfmNotificationFragment();
+                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.start, fragmentNotification);
+                        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
+
+                        ViewGroup mContainer = (ViewGroup) getActivity().findViewById(R.id.start);
+                        mContainer.removeAllViews();
+
                         Toast.makeText(thiscontext, "Teraz powinien otworzyc sie kolejny fragment", Toast.LENGTH_LONG).show();
 
                     } else{
@@ -86,8 +107,8 @@ public class WfmStartFragment extends Fragment {
 
         return view;
         //return inflater.inflate(R.layout.fragment_wfm_start, container, false);
-
     }
+
 
 
 }
