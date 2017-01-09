@@ -1,9 +1,11 @@
 package com.example.piotr.zstwp;
 
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -53,38 +55,15 @@ public class FmFragment extends Fragment {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                confirmAlert(v);
+                confirmAlert(v, true);
             }
         });
-        confirmButton.setEnabled(false);
 
         final Button cancelButton = (Button) view.findViewById(R.id.cancelButton);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                confirmAlert(v);
-            }
-        });
-        cancelButton.setEnabled(false);
-
-        final EditText commentField = (EditText) view.findViewById(R.id.confirmField);
-
-        commentField.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void afterTextChanged(Editable s) {}
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start,
-                                          int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start,
-                                      int before, int count) {
-
-                confirmButton.setEnabled(s.length() != 0);
-                cancelButton.setEnabled(s.length() != 0);
+                confirmAlert(v, false);
             }
         });
 
@@ -96,9 +75,50 @@ public class FmFragment extends Fragment {
         new GetAlertsData().execute();
     }
 
-    public void confirmAlert(View view) {
+    public void confirmAlert(View view, final Boolean status) {
         Log.d("Button", "Confirm");
-        getAlert();
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        final LayoutInflater inflater = getActivity().getLayoutInflater();
+        final View inf = inflater.inflate(R.layout.dialog_fm_comment, null);
+        final EditText commentField;
+
+        builder.setView(inf)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        EditText commentField = (EditText) inf.findViewById(R.id.commentField);
+                        String comment = commentField.getText().toString();
+                        Log.d("Czy się udało?", status.toString());
+                        Log.d("Comment", comment);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Log.d("cancel", "cancel");
+                    }
+                });
+
+        final AlertDialog commentDialog = builder.create();
+        commentDialog.show();
+        commentDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+        commentField = (EditText) commentDialog.findViewById(R.id.commentField);
+        commentField.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                commentDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(s.length() != 0);
+            }
+        });
     }
 
     private class GetAlertsData extends AsyncTask<Void, Void, String> {
