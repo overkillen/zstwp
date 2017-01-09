@@ -31,7 +31,7 @@
                 style="@style/TextInsideCardBig"/>
 
             <EditText
-                android:id="@+id/etDriverId"
+                android:id="@+id/driverId_et"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -56,5 +56,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/cardData"
         android:background="@drawable/button"/>
+
 
 </RelativeLayout>
