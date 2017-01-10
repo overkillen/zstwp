@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -81,6 +83,13 @@ public class FmFragment extends Fragment {
         final LayoutInflater inflater = getActivity().getLayoutInflater();
         final View inf = inflater.inflate(R.layout.dialog_fm_comment, null);
         final EditText commentField;
+        TextView statusText;
+        String statusInfo = "Fail";
+
+        if (status) {
+            statusInfo = "Success";
+        }
+
 
         builder.setView(inf)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -90,6 +99,7 @@ public class FmFragment extends Fragment {
                         String comment = commentField.getText().toString();
                         Log.d("Czy się udało?", status.toString());
                         Log.d("Comment", comment);
+                        goToSummary();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -101,6 +111,8 @@ public class FmFragment extends Fragment {
         final AlertDialog commentDialog = builder.create();
         commentDialog.show();
         commentDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+        statusText = (TextView) commentDialog.findViewById(R.id.statusInfo);
+        statusText.setText(statusInfo);
         commentField = (EditText) commentDialog.findViewById(R.id.commentField);
         commentField.addTextChangedListener(new TextWatcher() {
 
@@ -119,6 +131,19 @@ public class FmFragment extends Fragment {
                 commentDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(s.length() != 0);
             }
         });
+    }
+    
+    public void goToSummary(){
+        Fragment fragmentSummary = new FmSummaryFragment();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fmStart, fragmentSummary);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+        ViewGroup mContainer = (ViewGroup) getActivity().findViewById(R.id.fmStart);
+        mContainer.removeAllViews();
     }
 
     private class GetAlertsData extends AsyncTask<Void, Void, String> {

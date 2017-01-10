@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/fmSummary"
+
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin" >
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardClock"
+        style="@style/Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/CardInside"
+            android:paddingBottom="0dp">
+
+            <TextView
+                android:id="@+id/info"
+                style="@style/TextInsideCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checking other devices" />
+
+            <TextView
+                android:id="@+id/clock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clock"
+                android:gravity="center"
+                style="@style/TextInsideCardBig"
+                android:textSize="60dp" />
+
+            <TextView
+                android:id="@+id/pleaseWait"
+                style="@style/TextInsideCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please wait" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:layout_marginTop="15dp"
+                android:indeterminate="true"
+                android:scaleY="1.5" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardSuccess"
+        style="@style/Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/CardInside">
+
+            <TextView
+                style="@style/TextInsideCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repair successful"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/TextInsideCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thank you!"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardFail"
+        style="@style/Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/CardInside">
+
+            <TextView
+                style="@style/TextInsideCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New problems detected."
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/TextInsideCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please call NOC."
+                android:textSize="16sp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/exitButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button"
+        android:enabled="true"
+        android:text="Exit"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/callButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button"
+        android:enabled="true"
+        android:text="Call NOC"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>
