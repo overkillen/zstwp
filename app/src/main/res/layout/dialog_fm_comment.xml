@@ -4,6 +4,17 @@
     android:layout_height="wrap_content"
     android:gravity="center">
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogProgressBar"
+        android:indeterminate="true"
+        android:scaleY="1.5"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone" />
+
     <TextView
         android:id="@+id/statusInfo"
         style="@style/TextInsideCard"

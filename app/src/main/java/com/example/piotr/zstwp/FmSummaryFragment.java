@@ -81,7 +81,17 @@ public class FmSummaryFragment extends Fragment {
     }
 
     public void exit() {
-        //EXIT FROM FM PART
+        //TODO: exit from FM tab
+        /*Fragment fragmentFm = new FmFragment();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fmSummary, fragmentFm);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+        ViewGroup mContainer = (ViewGroup) getActivity().findViewById(R.id.fmSummary);
+        mContainer.removeAllViews();*/
     }
 
     public void callNoc() {
