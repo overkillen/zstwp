@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +16,16 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
+import static android.content.ContentValues.TAG;
+
+/**
+ * Created by Jakub on 2017-01-05.
+ */
 
 
-public class WfmNotificationFragment extends Fragment {
+public class WfmNotificationFragment extends Fragment implements OnBackPressedListener{
     View view;
+
 
     private Button navigateButton;
 
@@ -72,7 +79,6 @@ public class WfmNotificationFragment extends Fragment {
         return view;
 
     }
-
     @Override
     public void onPause() {
         super.onPause();

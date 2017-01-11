@@ -5,4 +5,5 @@ package com.example.piotr.zstwp;
  */
 
 public interface OnBackPressedListener {
+    void onBackPressed();
 }
