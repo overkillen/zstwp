@@ -98,7 +98,7 @@ public class WfmStartFragment extends Fragment {
                         //Toast.makeText(thiscontext, "Teraz powinien otworzyc sie kolejny fragment", Toast.LENGTH_LONG).show();
 
 
-                        Toast.makeText(thiscontext, "Teraz powinien otworzyc sie kolejny fragment", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(thiscontext, "Teraz powinien otworzyc sie kolejny fragment", Toast.LENGTH_LONG).show();
 
 
                     } else{

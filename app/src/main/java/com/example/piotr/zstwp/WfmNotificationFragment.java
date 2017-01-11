@@ -28,6 +28,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
 
 
     private Button navigateButton;
+    private Button endWorkButton;
 
     Context thiscontext;
 
@@ -61,6 +62,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
         destinationLongitude = 19.870662;
 
         navigateButton = (Button) view.findViewById(R.id.navigateButton);
+        endWorkButton = (Button) view.findViewById(R.id.endWorkButton);
 
         // Set a click listener for Fragment button
         navigateButton.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +74,13 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                 Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" + destinationLatitude + "," + destinationLongitude));
                 startActivity(intent);
 
+            }
+        });
+
+        endWorkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
