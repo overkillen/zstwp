@@ -13,20 +13,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class WfmStartFragment extends Fragment {
 
 
-
-
-
-
     Context thiscontext;
     View view;
     private Button loginButton;
     private EditText etDriverId;
+
+    //private TextView textViewTest;
 
     private String DriverIdString;
     private boolean driverIdCorrect;
@@ -97,7 +96,7 @@ public class WfmStartFragment extends Fragment {
                         ViewGroup mContainer = (ViewGroup) getActivity().findViewById(R.id.start);
                         mContainer.removeAllViews();
 
-                        Toast.makeText(thiscontext, "Teraz powinien otworzyc sie kolejny fragment", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(thiscontext, "Teraz powinien otworzyc sie kolejny fragment", Toast.LENGTH_LONG).show();
 
                     } else{
                         Toast.makeText(thiscontext, "Wpisz poprawne ID", Toast.LENGTH_SHORT).show();
