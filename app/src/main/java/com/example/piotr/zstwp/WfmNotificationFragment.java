@@ -64,6 +64,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
     private boolean sendData = false;
     private boolean sendDataFunctionIsActive = false;
     private boolean getNotificationData = false;
+    private boolean taskForServiceman = false;
     private boolean getNotificationDataFunctionIsActive = false;
 
 
@@ -89,11 +90,15 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
         // na razie jakies wspolrzedne na sztywno ;)
         destinationLatitude = 50.037067;
         destinationLongitude = 19.870662;
-        localServicemanID = 2001;
+
+        SharedPreferences myPrefs = thiscontext.getSharedPreferences("myPrefs", Context.MODE_WORLD_READABLE);
+        setLocalServicemanID(Integer.parseInt(myPrefs.getString("MEM1", "0000")));
 
         navigateButton = (Button) view.findViewById(R.id.navigateButton);
         endWorkButton = (Button) view.findViewById(R.id.endWorkButton);
         alertInfo = (TextView) view.findViewById(R.id.last_alert_time_text);
+
+
 
 
         // Set a click listener for Fragment button
@@ -115,6 +120,9 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                 onBackPressed();
             }
         });
+
+        navigateButton.setEnabled(false);
+        endWorkButton.setEnabled(true);
 
 
         if (!sendDataFunctionIsActive) {
@@ -154,16 +162,20 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
 
 
     public void onBackPressed() {
-        Fragment fragmentStart = new WfmStartFragment();
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.notification, fragmentStart);
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        if(!taskForServiceman) {
+            Fragment fragmentStart = new WfmStartFragment();
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.notification, fragmentStart);
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
 
-        ViewGroup mContainer = (ViewGroup) getActivity().findViewById(R.id.notification);
-        mContainer.removeAllViews();
+            ViewGroup mContainer = (ViewGroup) getActivity().findViewById(R.id.notification);
+            mContainer.removeAllViews();
+        }else{
+
+        }
     }
 
     private class PostGPSCords extends AsyncTask<Void, Void, String> {
@@ -226,7 +238,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
             String result = null;
 
             try {
-                URL url = new URL("http://zstwp.esy.es/zstwpApi/test2.php");
+                URL url = new URL("http://zstwp.esy.es/zstwpWFM/test2.php?ServicemanId=" + getLocalServicemanID());
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
                 urlConnection.connect();
@@ -277,6 +289,33 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                     jObject = new JSONObject(s);
                     Log.i("message", jObject.getString("message"));
                     alertInfo.setText(jObject.getString("message"));
+                    alertInfo.append(" serID: " + jObject.getString("whoSend"));
+                    if(jObject.getString("toME").contains("Yes")){
+                        Log.d(TAG, "onPostExecute: mam zadanie do wykonania");
+                        endWorkButton.setEnabled(false);
+                        navigateButton.setEnabled(true);
+                        taskForServiceman = true;
+                        sendData = false;
+                        //getNotificationData = false;
+
+
+                    }else{
+                        Log.d(TAG, "onPostExecute: nie mam zadania do wykonania");
+                        endWorkButton.setEnabled(true);
+                        navigateButton.setEnabled(false);
+                    }
+                    if(jObject.getString("isRepair").contains("Yes")) {
+                        Log.d(TAG, "onPostExecute: naporawiono usterkę");
+                        if (!sendDataFunctionIsActive) {
+                            callAsynchronousTaskPostGPSCords();
+                        }
+                        endWorkButton.setEnabled(true);
+                        navigateButton.setEnabled(false);
+                        taskForServiceman = false;
+
+                    }else{
+                        Log.d(TAG, "onPostExecute: Jeszcze nie naprawiono usterki");
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

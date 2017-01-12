@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class WfmStartFragment extends Fragment {
 
@@ -30,11 +32,13 @@ public class WfmStartFragment extends Fragment {
     private String DriverIdString;
     private boolean driverIdCorrect;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
 
 
         view = inflater.inflate(R.layout.fragment_wfm_start, container, false);
+
 
         // DriverIds in database
         final int[] driver_id_tab = {2001, 2002, 2003, 2004};
