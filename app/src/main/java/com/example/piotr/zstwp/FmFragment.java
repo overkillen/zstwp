@@ -237,7 +237,7 @@ public class FmFragment extends Fragment {
                     deviceIp.setText(jObject.getString("ip"));
                     ticketNumber.setText(jObject.getString("number"));
                     rackslot.setText(jObject.getString("rackslot"));
-                    shelf.setText(jObject.getString("name"));
+                    shelf.setText(jObject.getString("shelf"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
