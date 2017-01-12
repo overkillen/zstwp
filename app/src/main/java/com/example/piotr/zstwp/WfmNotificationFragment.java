@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Pair;
 import android.os.Handler;
@@ -45,12 +46,13 @@ import static android.content.ContentValues.TAG;
  */
 
 
-public class WfmNotificationFragment extends Fragment implements OnBackPressedListener{
+public class WfmNotificationFragment extends Fragment implements OnBackPressedListener {
     View view;
 
 
     private Button navigateButton;
     private Button endWorkButton;
+    private TextView alertInfo;
 
     Context thiscontext;
 
@@ -61,6 +63,8 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
     private GPSTracker gps;
     private boolean sendData = false;
     private boolean sendDataFunctionIsActive = false;
+    private boolean getNotificationData = false;
+    private boolean getNotificationDataFunctionIsActive = false;
 
 
     @Override
@@ -73,7 +77,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
         gps = new GPSTracker(thiscontext);
 
 
-        if(gps.canGetLocation()){
+        if (gps.canGetLocation()) {
 
         } else {
             // can't get location
@@ -89,6 +93,8 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
 
         navigateButton = (Button) view.findViewById(R.id.navigateButton);
         endWorkButton = (Button) view.findViewById(R.id.endWorkButton);
+        alertInfo = (TextView) view.findViewById(R.id.last_alert_time_text);
+
 
         // Set a click listener for Fragment button
         navigateButton.setOnClickListener(new View.OnClickListener() {
@@ -111,13 +117,18 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
         });
 
 
-        if(!sendDataFunctionIsActive) {
+        if (!sendDataFunctionIsActive) {
             callAsynchronousTaskPostGPSCords();
+        }
+
+        if(!getNotificationData){
+            callAsynchronousTaskGetNotificationData();
         }
         //return inflater.inflate(R.layout.fragment_wfm_notification, container, false);
         return view;
 
     }
+
     @Override
     public void onPause() {
         super.onPause();
@@ -128,17 +139,21 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
         // Remove object
         gps = null;
         sendData = false;
+        getNotificationData = false;
     }
 
-    public void onResume(){
+    public void onResume() {
         super.onResume();
-        if(!sendDataFunctionIsActive) {
+        if (!sendDataFunctionIsActive) {
             callAsynchronousTaskPostGPSCords();
+        }
+        if(!getNotificationData){
+            callAsynchronousTaskGetNotificationData();
         }
     }
 
 
-    public void onBackPressed(){
+    public void onBackPressed() {
         Fragment fragmentStart = new WfmStartFragment();
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -174,9 +189,9 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                 JSONObject temporaryData = new JSONObject();
 
                 try {
-                    temporaryData.put("temporaryServicemanLatitude",destinationLatitude);
-                    temporaryData.put("temporaryServicemanLongitude",destinationLongitude);
-                    temporaryData.put("servicemanID",localServicemanID);
+                    temporaryData.put("temporaryServicemanLatitude", getDestinationLatitude());
+                    temporaryData.put("temporaryServicemanLongitude", getDestinationLongitude());
+                    temporaryData.put("servicemanID", getLocalServicemanID());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -188,7 +203,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
 
                 Log.d(TAG, "doInBackground: Dane zostały wysłane");
             } catch (IOException e) {
-                Log.e(TAG, "doInBackground: Nie można wysłać danych, może nie ma sieci",e);
+                Log.e(TAG, "doInBackground: Nie można wysłać danych, może nie ma sieci", e);
                 return null;
             } finally {
                 if (urlConnection != null) {
@@ -203,8 +218,77 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
         }
     }
 
+    private class GetNotificationData extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... params) {
+            HttpURLConnection urlConnection = null;
+            BufferedReader reader = null;
+            String result = null;
+
+            try {
+                URL url = new URL("http://zstwp.esy.es/zstwpApi/test2.php");
+                urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection.setRequestMethod("GET");
+                urlConnection.connect();
+
+                InputStream inputStream = urlConnection.getInputStream();
+                StringBuffer buffer = new StringBuffer();
+
+                if (inputStream == null) {
+                    return null;
+                }
+
+                reader = new BufferedReader(new InputStreamReader(inputStream));
+
+                String line = "";
+                while ((line = reader.readLine()) != null) {
+                    buffer.append(line);
+                }
+
+                if (buffer.length() == 0) {
+                    return null;
+                }
+
+                result = buffer.toString();
+                return result;
+            } catch (IOException e) {
+                Log.e("PlaceholderFragment", "Error ", e);
+                return null;
+            } finally {
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
+                }
+                if (reader != null) {
+                    try {
+                        reader.close();
+                    } catch (final IOException e) {
+                        Log.e("PlaceholderFragment", "Error closing stream", e);
+                    }
+                }
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            if (s != null && !s.equals("null")) {
+                Log.i("Odpowiedz ", s);
+                JSONObject jObject = null;
+                try {
+                    jObject = new JSONObject(s);
+                    Log.i("message", jObject.getString("message"));
+                    alertInfo.setText(jObject.getString("message"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                String errorMessage = "Błąd przy połączeniu z bazą. Poczekaj na aktualizację";
+                alertInfo.setText(errorMessage);
+            }
+        }
+    }
+
     public void callAsynchronousTaskPostGPSCords() {
-        sendDataFunctionIsActive=true;
+        sendDataFunctionIsActive = true;
         sendData = true;
         final Handler handler = new Handler();
         final Timer timer = new Timer();
@@ -213,18 +297,18 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
             public void run() {
                 handler.post(new Runnable() {
                     public void run() {
-                        if(sendData) {
+                        if (sendData) {
                             try {
                                 PostGPSCords postGPSCords = new PostGPSCords();
                                 postGPSCords.execute();
                             } catch (Exception e) {
 
                             }
-                        }else{
+                        } else {
                             Log.d(TAG, "run: Przerywamy wysyłanie danych");
                             timer.cancel();
                             timer.purge();
-                            sendDataFunctionIsActive=false;
+                            sendDataFunctionIsActive = false;
 
                         }
                     }
@@ -235,5 +319,57 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
         timer.schedule(doAsynchronousTask, 0, 5000);
     }
 
+    public void callAsynchronousTaskGetNotificationData()
+    {
+        getNotificationDataFunctionIsActive = true;
+        getNotificationData = true;
+        final Handler handler = new Handler();
+        final Timer timer = new Timer();
+        TimerTask doAsynchronousTask = new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(new Runnable() {
+                    public void run() {
+                        if (sendData) {
+                            try {
+                                GetNotificationData getNotificationData = new GetNotificationData();
+                                getNotificationData.execute();
+                            } catch (Exception e) {
+
+                            }
+                        } else {
+                            Log.d(TAG, "run: Przerywamy odbieranie danych");
+                            timer.cancel();
+                            timer.purge();
+                            getNotificationDataFunctionIsActive = false;
+
+                        }
+                    }
+
+                });
+            }
+        };
+        timer.schedule(doAsynchronousTask, 0, 5000);
+    }
+
+    private synchronized void setDestinationLatitude(double d){
+        destinationLatitude = d;
+    };
+    private synchronized void setDestinationLongitude(double d){
+        destinationLongitude = d;
+    };
+    private synchronized void setLocalServicemanID(int d){
+        localServicemanID = d;
+    };
+    private synchronized double getDestinationLatitude(){
+        return destinationLatitude;
+    };
+    private synchronized double getDestinationLongitude(){
+        return destinationLongitude;
+    };
+
+    private synchronized int getLocalServicemanID() {
+        return localServicemanID;
+    };
 
 }
