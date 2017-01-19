@@ -23,6 +23,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.DataOutput;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,6 +33,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -183,20 +186,61 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
 
     private class PostGPSCords extends AsyncTask<Void, Void, String> {
         @Override
+
         protected String doInBackground(Void... params) {
+            HttpURLConnection urlConnection = null;
+            BufferedReader reader = null;
+            String result = null;
+            Double temporaryServicemanLatitude = null;
+            Double temporaryServicemanLongitude = null;
+
+            if (!(gps == null)) {
+                temporaryServicemanLatitude = gps.getServisantLatitude();
+                temporaryServicemanLongitude = gps.getServisantLongitude();
+            } else {
+                temporaryServicemanLatitude = 0.0;
+                temporaryServicemanLongitude = 0.0;
+            }
+
+            try {
+                URL url = new URL("http://zstwp.esy.es/zstwpWFM/test.php?temporaryServicemanLatitude=" + temporaryServicemanLatitude + "&temporaryServicemanLongitude=" + temporaryServicemanLongitude + "&servicemanID=" + getLocalServicemanID());
+                urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection.setRequestMethod("GET");
+                urlConnection.connect();
+
+                InputStream inputStream = urlConnection.getInputStream();
+
+                Log.d(TAG, "doInBackground: Została wywołana strona testowa");
+            } catch (IOException e) {
+                Log.e("PlaceholderFragment", "Error ", e);
+                return null;
+            } finally {
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
+                }
+            }
+            return null;
+        }
+       /* protected String doInBackground(Void... params) {
             HttpURLConnection urlConnection = null;
             String result = null;
 
             try {
                 URL url = new URL("http://zstwp.esy.es/zstwpWFM/test.php");
                 urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setReadTimeout(10000);
-                urlConnection.setConnectTimeout(15000);
+                //urlConnection.setReadTimeout(10000);
+                //urlConnection.setConnectTimeout(15000);
                 urlConnection.setDoOutput(true);
-                urlConnection.setDoInput(true);
-                urlConnection.setRequestProperty("Content-Type", "application/json");
-                urlConnection.setRequestProperty("Accept", "application/json");
+                //urlConnection.setDoInput(true);
+                urlConnection.setUseCaches(false);
+                urlConnection.setInstanceFollowRedirects(false);
                 urlConnection.setRequestMethod("POST");
+                //urlConnection.setRequestProperty("Content-Type", "application/json");
+                urlConnection.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
+                urlConnection.setRequestProperty( "charset", "utf-8");
+                //urlConnection.setRequestProperty("Host", "android.piotr.zstwp");
+                //urlConnection.setRequestProperty("Accept", "application/json");
+
 
                 urlConnection.connect();
                 Log.d(TAG, "doInBackground: Mamy połączenie");
@@ -216,8 +260,9 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                     e.printStackTrace();
                 }
 
-                OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
-                wr.write(temporaryData.toString());
+                DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
+
+                wr.write(temporaryData.toString().getBytes("utf-8"));
                 wr.flush();
                 wr.close();
 
@@ -231,7 +276,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                 }
             }
             return result;
-        }
+        }*/
 
         @Override
         protected void onPostExecute(String s) {
