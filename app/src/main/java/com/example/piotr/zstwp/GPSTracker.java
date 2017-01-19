@@ -11,6 +11,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
+import android.renderscript.Double2;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -211,5 +212,21 @@ public class GPSTracker extends Service implements LocationListener {
     public IBinder onBind(Intent arg0) {
         return null;
     }
+
+    protected synchronized double getServisantLatitude(){
+        if(!Double.isNaN(latitude)) {
+            return latitude;
+        }
+        else{
+            return 0;
+        }
+    };
+    protected synchronized double getServisantLongitude(){
+        if(!Double.isNaN(longitude)) {
+            return longitude;
+        }else{
+            return 0;
+        }
+    };
 
 }

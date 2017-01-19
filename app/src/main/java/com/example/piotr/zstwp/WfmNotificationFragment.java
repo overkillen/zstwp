@@ -152,6 +152,9 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
 
     public void onResume() {
         super.onResume();
+
+        sendData = true; //po powrocie z  nawigacji sprawdzamy czy coś jest dla nasdo zrobienia, jeśli stare zgłoszenie nie jest naprawione to zablokujemy ponownie funkcję wysyłania
+
         if (!sendDataFunctionIsActive) {
             callAsynchronousTaskPostGPSCords();
         }
@@ -201,8 +204,13 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                 JSONObject temporaryData = new JSONObject();
 
                 try {
-                    temporaryData.put("temporaryServicemanLatitude", getDestinationLatitude());
-                    temporaryData.put("temporaryServicemanLongitude", getDestinationLongitude());
+                    if(!(gps == null)) {
+                        temporaryData.put("temporaryServicemanLatitude", gps.getServisantLatitude());
+                        temporaryData.put("temporaryServicemanLongitude", gps.getServisantLongitude());
+                    }else{
+                        temporaryData.put("temporaryServicemanLatitude", 0);
+                        temporaryData.put("temporaryServicemanLongitude", 0);
+                    }
                     temporaryData.put("servicemanID", getLocalServicemanID());
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -292,10 +300,12 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                     alertInfo.append(" serID: " + jObject.getString("whoSend"));
                     if(jObject.getString("toME").contains("Yes")){
                         Log.d(TAG, "onPostExecute: mam zadanie do wykonania");
+                        setDestinationLatitude(Double.parseDouble(jObject.getString("latitude")));
+                        setDestinationLongitude(Double.parseDouble(jObject.getString("longitude")));
                         endWorkButton.setEnabled(false);
                         navigateButton.setEnabled(true);
-                        taskForServiceman = true;
-                        sendData = false;
+                        taskForServiceman = true;  //blokada wyjścia z aplikacji gdy serwisant ma zgłoszenie
+                        sendData = false; //zatrzymujemy wysyłanie danych aktualizujących położenie serwisanta do centrali
                         //getNotificationData = false;
 
 
@@ -304,7 +314,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                         endWorkButton.setEnabled(true);
                         navigateButton.setEnabled(false);
                     }
-                    if(jObject.getString("isRepair").contains("Yes")) {
+                    /*if(jObject.getString("isRepair").contains("Yes")) {
                         Log.d(TAG, "onPostExecute: naporawiono usterkę");
                         if (!sendDataFunctionIsActive) {
                             callAsynchronousTaskPostGPSCords();
@@ -315,7 +325,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
 
                     }else{
                         Log.d(TAG, "onPostExecute: Jeszcze nie naprawiono usterki");
-                    }
+                    } */
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -406,7 +416,6 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
     private synchronized double getDestinationLongitude(){
         return destinationLongitude;
     };
-
     private synchronized int getLocalServicemanID() {
         return localServicemanID;
     };
