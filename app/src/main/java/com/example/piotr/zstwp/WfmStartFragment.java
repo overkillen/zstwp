@@ -67,7 +67,7 @@ public class WfmStartFragment extends Fragment {
 
                 // Check if editText is not empty
                 if (DriverIdString.matches("")) {
-                    Toast.makeText(thiscontext, "Wpisz ID", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(thiscontext, "Enter your ID", Toast.LENGTH_SHORT).show();
                 } else {
                     // Check if driverId is correct (existing in database)
                     int driverIdInt = Integer.parseInt(DriverIdString);
@@ -106,7 +106,7 @@ public class WfmStartFragment extends Fragment {
 
 
                     } else{
-                        Toast.makeText(thiscontext, "Wpisz poprawne ID", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(thiscontext, "Enter the correct ID", Toast.LENGTH_SHORT).show();
                     }
 
                 }
