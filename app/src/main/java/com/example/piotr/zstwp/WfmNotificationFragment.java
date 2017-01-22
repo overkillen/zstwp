@@ -347,12 +347,17 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                         Log.d(TAG, "onPostExecute: mam zadanie do wykonania");
                         setDestinationLatitude(Double.parseDouble(jObject.getString("latitude")));
                         setDestinationLongitude(Double.parseDouble(jObject.getString("longitude")));
-                        endWorkButton.setEnabled(false);
-                        navigateButton.setEnabled(true);
                         taskForServiceman = true;  //blokada wyjścia z aplikacji gdy serwisant ma zgłoszenie
                         sendData = false; //zatrzymujemy wysyłanie danych aktualizujących położenie serwisanta do centrali
                         //getNotificationData = false;
+                        if(jObject.getString("isRepair").contains("Yes")) {
+                            endWorkButton.setEnabled(true);
+                            navigateButton.setEnabled(false);
 
+                        }else{
+                            endWorkButton.setEnabled(false);
+                            navigateButton.setEnabled(true);
+                        }
 
                     }else{
                         Log.d(TAG, "onPostExecute: nie mam zadania do wykonania");
