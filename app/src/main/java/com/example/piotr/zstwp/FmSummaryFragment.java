@@ -70,7 +70,7 @@ public class FmSummaryFragment extends Fragment {
         });
 
         final TextView clock = (TextView) view.findViewById(R.id.clock);
-        new CountDownTimer(10000, 1000) {
+        new CountDownTimer(60000, 1000) {
 
             public void onTick(long milliseconds) {
                 int seconds = (int) (milliseconds / 1000) % 60 ;
