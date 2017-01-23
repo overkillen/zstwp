@@ -54,7 +54,7 @@
       <file leaf-file-name="WfmStartFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmStartFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="85">
               <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -66,7 +66,7 @@
       <file leaf-file-name="FmSummaryFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/FmSummaryFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="153">
               <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -80,14 +80,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2550">
               <caret line="183" column="86" selection-start-line="183" selection-start-column="75" selection-end-line="183" selection-end-column="86" />
-              <folding>
-                <element signature="e#2531#2532#0" expanded="false" />
-                <element signature="e#2584#2585#0" expanded="false" />
-                <element signature="e#2800#2801#0" expanded="false" />
-                <element signature="e#2854#2855#0" expanded="false" />
-                <marker date="1485105016958" expanded="true" signature="6310:9281" ph="{...}" />
-                <marker date="1485105016958" expanded="true" signature="8107:9275" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,24 +88,10 @@
       <file leaf-file-name="WfmNotificationFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmNotificationFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3557">
-              <caret line="181" column="14" selection-start-line="181" selection-start-column="14" selection-end-line="181" selection-end-column="14" />
+            <state relative-caret-position="506">
+              <caret line="454" column="47" selection-start-line="454" selection-start-column="47" selection-end-line="454" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3090#3586#0" expanded="true" />
-                <element signature="e#3585#3586#0" expanded="true" />
-                <element signature="e#3631#3780#0" expanded="true" />
-                <element signature="e#3722#3723#0" expanded="false" />
-                <element signature="e#3769#3770#0" expanded="false" />
-                <element signature="e#3779#3780#0" expanded="true" />
-                <element signature="e#14579#15381#0" expanded="true" />
-                <element signature="e#14680#15355#0" expanded="true" />
-                <element signature="e#15354#15355#0" expanded="true" />
-                <element signature="e#15380#15381#0" expanded="true" />
-                <element signature="e#15722#16564#0" expanded="true" />
-                <element signature="e#15823#16538#0" expanded="true" />
-                <element signature="e#16537#16538#0" expanded="true" />
-                <element signature="e#16563#16564#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,15 +102,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3468">
               <caret line="223" column="55" selection-start-line="223" selection-start-column="46" selection-end-line="223" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#4791#4792#0" expanded="false" />
-                <element signature="e#4833#4834#0" expanded="false" />
-                <element signature="e#5836#5837#0" expanded="false" />
-                <element signature="e#5883#5884#0" expanded="false" />
-                <element signature="e#6746#6747#0" expanded="false" />
-                <element signature="e#6773#6774#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,13 +112,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#295#296#0" expanded="false" />
-                <element signature="e#320#321#0" expanded="false" />
-                <element signature="e#689#690#0" expanded="false" />
-                <element signature="e#713#714#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1718,8 +1683,8 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/GPSTracker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmNotificationFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmStartFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmNotificationFragment.java" />
       </list>
     </option>
   </component>
@@ -1754,9 +1719,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1774,46 +1736,13 @@
               <option name="myItemId" value="zstwp" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zstwp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zstwp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zstwp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2149,8 +2078,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24494143" sideWeight="0.5042644" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23535676" sideWeight="0.49573562" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23535676" sideWeight="0.24360341" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23535676" sideWeight="0.7563966" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20553781" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.4978678" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2196,33 +2125,33 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_start.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_start.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/MainActivity.java">
@@ -2273,20 +2202,6 @@
           <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3090#3586#0" expanded="true" />
-            <element signature="e#3585#3586#0" expanded="true" />
-            <element signature="e#3631#3780#0" expanded="true" />
-            <element signature="e#3722#3723#0" expanded="false" />
-            <element signature="e#3769#3770#0" expanded="false" />
-            <element signature="e#3779#3780#0" expanded="true" />
-            <element signature="e#14579#15381#0" expanded="true" />
-            <element signature="e#14680#15355#0" expanded="true" />
-            <element signature="e#15354#15355#0" expanded="true" />
-            <element signature="e#15380#15381#0" expanded="true" />
-            <element signature="e#15722#16564#0" expanded="true" />
-            <element signature="e#15823#16538#0" expanded="true" />
-            <element signature="e#16537#16538#0" expanded="true" />
-            <element signature="e#16563#16564#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2295,44 +2210,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#295#296#0" expanded="false" />
-            <element signature="e#320#321#0" expanded="false" />
-            <element signature="e#689#690#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_start.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_start.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/MainActivity.java">
@@ -2359,20 +2268,6 @@
           <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3090#3586#0" expanded="true" />
-            <element signature="e#3585#3586#0" expanded="true" />
-            <element signature="e#3631#3780#0" expanded="true" />
-            <element signature="e#3722#3723#0" expanded="false" />
-            <element signature="e#3769#3770#0" expanded="false" />
-            <element signature="e#3779#3780#0" expanded="true" />
-            <element signature="e#14579#15381#0" expanded="true" />
-            <element signature="e#14680#15355#0" expanded="true" />
-            <element signature="e#15354#15355#0" expanded="true" />
-            <element signature="e#15380#15381#0" expanded="true" />
-            <element signature="e#15722#16564#0" expanded="true" />
-            <element signature="e#15823#16538#0" expanded="true" />
-            <element signature="e#16537#16538#0" expanded="true" />
-            <element signature="e#16563#16564#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2381,44 +2276,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#295#296#0" expanded="false" />
-            <element signature="e#320#321#0" expanded="false" />
-            <element signature="e#689#690#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_start.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_start.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/MainActivity.java">
@@ -2433,14 +2322,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="e#2531#2532#0" expanded="false" />
-            <element signature="e#2584#2585#0" expanded="false" />
-            <element signature="e#2800#2801#0" expanded="false" />
-            <element signature="e#2854#2855#0" expanded="false" />
-            <marker date="1485105016958" expanded="true" signature="6310:9281" ph="{...}" />
-            <marker date="1485105016958" expanded="true" signature="8107:9275" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2460,20 +2342,6 @@
           <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3090#3586#0" expanded="true" />
-            <element signature="e#3585#3586#0" expanded="true" />
-            <element signature="e#3631#3780#0" expanded="true" />
-            <element signature="e#3722#3723#0" expanded="false" />
-            <element signature="e#3769#3770#0" expanded="false" />
-            <element signature="e#3779#3780#0" expanded="true" />
-            <element signature="e#14579#15381#0" expanded="true" />
-            <element signature="e#14680#15355#0" expanded="true" />
-            <element signature="e#15354#15355#0" expanded="true" />
-            <element signature="e#15380#15381#0" expanded="true" />
-            <element signature="e#15722#16564#0" expanded="true" />
-            <element signature="e#15823#16538#0" expanded="true" />
-            <element signature="e#16537#16538#0" expanded="true" />
-            <element signature="e#16563#16564#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2483,34 +2351,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="24" column="37" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#295#296#0" expanded="false" />
-            <element signature="e#320#321#0" expanded="false" />
-            <element signature="e#689#690#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
@@ -2536,44 +2398,44 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/menu.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_fm.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/toolbar.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_main.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_start.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
@@ -2595,13 +2457,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/OnBackPressedListener.java">
@@ -2631,13 +2493,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#295#296#0" expanded="false" />
-            <element signature="e#320#321#0" expanded="false" />
-            <element signature="e#689#690#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2650,28 +2506,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_wfm_notification.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/GPSTracker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3468">
           <caret line="223" column="55" selection-start-line="223" selection-start-column="46" selection-end-line="223" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4791#4792#0" expanded="false" />
-            <element signature="e#4833#4834#0" expanded="false" />
-            <element signature="e#5836#5837#0" expanded="false" />
-            <element signature="e#5883#5884#0" expanded="false" />
-            <element signature="e#6746#6747#0" expanded="false" />
-            <element signature="e#6773#6774#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2679,14 +2527,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
           <caret line="183" column="86" selection-start-line="183" selection-start-column="75" selection-end-line="183" selection-end-column="86" />
-          <folding>
-            <element signature="e#2531#2532#0" expanded="false" />
-            <element signature="e#2584#2585#0" expanded="false" />
-            <element signature="e#2800#2801#0" expanded="false" />
-            <element signature="e#2854#2855#0" expanded="false" />
-            <marker date="1485105016958" expanded="true" signature="6310:9281" ph="{...}" />
-            <marker date="1485105016958" expanded="true" signature="8107:9275" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2700,7 +2541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/FmSummaryFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="153">
           <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2710,7 +2551,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmStartFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="85">
           <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2720,24 +2561,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/piotr/zstwp/WfmNotificationFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3557">
-          <caret line="181" column="14" selection-start-line="181" selection-start-column="14" selection-end-line="181" selection-end-column="14" />
+        <state relative-caret-position="506">
+          <caret line="454" column="47" selection-start-line="454" selection-start-column="47" selection-end-line="454" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3090#3586#0" expanded="true" />
-            <element signature="e#3585#3586#0" expanded="true" />
-            <element signature="e#3631#3780#0" expanded="true" />
-            <element signature="e#3722#3723#0" expanded="false" />
-            <element signature="e#3769#3770#0" expanded="false" />
-            <element signature="e#3779#3780#0" expanded="true" />
-            <element signature="e#14579#15381#0" expanded="true" />
-            <element signature="e#14680#15355#0" expanded="true" />
-            <element signature="e#15354#15355#0" expanded="true" />
-            <element signature="e#15380#15381#0" expanded="true" />
-            <element signature="e#15722#16564#0" expanded="true" />
-            <element signature="e#15823#16538#0" expanded="true" />
-            <element signature="e#16537#16538#0" expanded="true" />
-            <element signature="e#16563#16564#0" expanded="true" />
           </folding>
         </state>
       </provider>

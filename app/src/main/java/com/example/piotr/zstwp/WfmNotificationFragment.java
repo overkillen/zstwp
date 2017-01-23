@@ -69,6 +69,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
     private boolean getNotificationData = false;
     private boolean taskForServiceman = false;
     private boolean getNotificationDataFunctionIsActive = false;
+    private String nowWorking = "no";
 
 
     @Override
@@ -203,7 +204,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
             }
 
             try {
-                URL url = new URL("http://zstwp.esy.es/zstwpWFM/test.php?temporaryServicemanLatitude=" + temporaryServicemanLatitude + "&temporaryServicemanLongitude=" + temporaryServicemanLongitude + "&servicemanID=" + getLocalServicemanID());
+                URL url = new URL("http://zstwp.esy.es/zstwpWFM/test.php?temporaryServicemanLatitude=" + temporaryServicemanLatitude + "&temporaryServicemanLongitude=" + temporaryServicemanLongitude + "&servicemanID=" + getLocalServicemanID() + "&nowWorking=" + nowWorking);
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
                 urlConnection.connect();
@@ -345,6 +346,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                     alertInfo.append(" serID: " + jObject.getString("whoSend"));
                     if(jObject.getString("toME").contains("Yes")){
                         Log.d(TAG, "onPostExecute: mam zadanie do wykonania");
+                        nowWorking = "yes";
                         setDestinationLatitude(Double.parseDouble(jObject.getString("latitude")));
                         setDestinationLongitude(Double.parseDouble(jObject.getString("longitude")));
                         taskForServiceman = true;  //blokada wyjścia z aplikacji gdy serwisant ma zgłoszenie
@@ -353,6 +355,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                         if(jObject.getString("isRepair").contains("Yes")) {
                             endWorkButton.setEnabled(true);
                             navigateButton.setEnabled(false);
+                            nowWorking = "no";
 
                         }else{
                             endWorkButton.setEnabled(false);
@@ -361,6 +364,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
 
                     }else{
                         Log.d(TAG, "onPostExecute: nie mam zadania do wykonania");
+                        nowWorking = "no";
                         endWorkButton.setEnabled(true);
                         navigateButton.setEnabled(false);
                     }
@@ -415,7 +419,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                 });
             }
         };
-        timer.schedule(doAsynchronousTask, 0, 5000);
+        timer.schedule(doAsynchronousTask, 0, 7000);
     }
 
     public void callAsynchronousTaskGetNotificationData()
@@ -448,7 +452,7 @@ public class WfmNotificationFragment extends Fragment implements OnBackPressedLi
                 });
             }
         };
-        timer.schedule(doAsynchronousTask, 0, 5000);
+        timer.schedule(doAsynchronousTask, 0, 7000);
     }
 
     private synchronized void setDestinationLatitude(double d){

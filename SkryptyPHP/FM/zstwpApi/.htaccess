@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteBase /zstwpApi
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /zstwpApi/index.php [L]
